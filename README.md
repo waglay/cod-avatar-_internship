@@ -52,6 +52,22 @@
 - And in **Enter the default Docker image (for example, ruby:2.7):**, type your custom image or in my case I entered the ubuntu:latest
 - After all this the runner should be seen successfully in the GitLab Server and the pipeline code can be written in .gitlab-ci.yml file. 
 ## Installation of Kubernetes using microk8s
+- Host a ec2-instance with any OS, in my case ubuntu is used.
+- **Now install the snapd package manager and follow the below commands:**
+- sudo apt update
+- sudo apt install snapd -y
+- sudo ln -s /var/lib/snapd/snap /snap
+- sudo snap install microk8s --classic
+- **Now setup and open the following ports in firewall rules:**
+- sudo ufw allow 25000/tcp
+- sudo ufw allow 16443/tcp
+- sudo ufw allow 10250/tcp
+- sudo ufw allow 10255/tcp
 
+- ### For the addition of Worker Node:
+- Host a ec2-instance as before.
+- Follow all the steps as before and execute **sudo microk8s add-node** command on the master node.
+- It will provide the join command so, execute the command in worker node and the node is added successfully.
 ## Bash script to backup PostgreSQL weekly and upload in AWS S3
+
 
