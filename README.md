@@ -69,5 +69,10 @@
 - Follow all the steps as before and execute **sudo microk8s add-node** command on the master node.
 - It will provide the join command so, execute the command in worker node and the node is added successfully.
 ## Bash script to backup PostgreSQL weekly and upload in AWS S3
-
+- Host a ec2-instance in AWS.
+- Make a IAM role with AmazonS3FullAccess for ec2-instance and attach the role in the ec2-instance.
+- ssh to the instance and install s3cmd.
+- Successfully setup and configure PostgreSQL
+- Now create a new script file named backup.sh and provide executable permission using **chmod +x ./backup.sh**, the backup script is provided in this repo.
+- After that, schedule the execution of the script on every Sunday at 5 pm \ so, **crontab -e** command is used and **0 17 * * 0 /root/backup.sh** was inserted and changes were saved.  
 
