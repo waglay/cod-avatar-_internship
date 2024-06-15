@@ -74,5 +74,5 @@
 - ssh to the instance and install s3cmd.
 - Successfully setup and configure PostgreSQL
 - Now create a new script file named backup.sh and provide executable permission using **chmod +x ./backup.sh**, the backup script is provided in this repo.
-- After that, schedule the execution of the script on every Sunday at 5 pm \ so, **crontab -e** command is used and **0 17 * * 0 /root/backup.sh** was inserted and changes were saved.  
+- After that, schedule the execution of the script on every Sunday at 5 pm so, **crontab -e** command is used and **0 17 * * 0 /root/backup.sh** was inserted and changes were saved.  
 
